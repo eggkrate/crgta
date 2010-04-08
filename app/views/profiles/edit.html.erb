@@ -1,0 +1,68 @@
+<h1>Editing profile</h1>
+
+<% form_for(@profile) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :contact %><br />
+    <%= f.text_field :contact %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :industry %><br />
+    <%= f.text_field :industry %>
+  </p>
+  <p>
+    <%= f.label :services %><br />
+    <%= f.text_area :services %>
+  </p>
+  <p>
+    <%= f.label :street %><br />
+    <%= f.text_field :street %>
+  </p>
+  <p>
+    <%= f.label :street_2 %><br />
+    <%= f.text_field :street_2 %>
+  </p>
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= f.label :zipcode %><br />
+    <%= f.text_field :zipcode %>
+  </p>
+  <p>
+    <%= f.label :county %><br />
+    <%= f.text_field :county %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @profile %> |
+<%= link_to 'Back', profiles_path %>
