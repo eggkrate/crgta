@@ -5,3 +5,8 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+
+%w(skamania klickitat sherman wasco).each do |c|
+  County.create(:name => "#{c}".titleize)
+end
+County.create(:name => "hood river".titleize)
