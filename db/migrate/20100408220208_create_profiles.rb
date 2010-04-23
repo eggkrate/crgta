@@ -15,6 +15,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :county
       t.integer :phone
       t.string :website
+      t.string :user_id
 
       t.timestamps
     end

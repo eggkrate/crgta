@@ -1,6 +1,7 @@
 <h1><%= @index.title.titleize %></h1>
 <p><%= @index.content %></p>
 
+<h2>Pages</h2>
 <ul>
 <% @pages.each do |page| %>
 	<li>
@@ -11,3 +12,22 @@
 		<% end %>
 	</li>
 <% end %>
+</ul>
+
+<h2>News</h2>
+<ul>
+	<% @news.each do |item| %>
+		<li>
+			<%= link_to item.title.titleize, item %>
+		</li>
+	<% end %>
+</ul>
+
+<h2>Members</h2>
+<ul>
+	<% @users.each do |user| %>
+		<li>
+		  <strong><%= link_to user.profile.name.titleize, user %>:</strong> (contact: <%= user.profile.contact %>) <%= user.profile.description %> (Phone: <%= user.profile.phone %>, <%= link_to user.profile.website, user.profile.website %>)
+		</li>
+	<% end %>
+</ul>

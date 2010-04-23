@@ -5,13 +5,14 @@ ActionController::Routing::Routes.draw do |map|
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
   map.login 'login', :controller => 'user_sessions', :action => 'new'
   map.resources :user_sessions
-  map.resources :pages
   map.resources :users
+
   map.root :controller => 'pages', :action => 'index'
 
-  map.page ':category/:id', :controller => 'pages', :action => 'show'
-  map.news_item '/:id', :controller => 'news_items', :action => 'show'
+  map.resources :news_items
 
+  map.page ':category/:id', :controller => 'pages', :action => 'show'
+  
   map.namespace :admin do |admin|
     admin.resources :pages
     admin.resources :news_items

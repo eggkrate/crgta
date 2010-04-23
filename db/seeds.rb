@@ -29,3 +29,21 @@ end
 5.times do |time|
   NewsItem.create(:title => Faker::Lorem.sentence, :content => Faker::Lorem.paragraphs.join(' '), :date => time.days.ago)
 end
+
+50.times do |time|
+  User.create(:email => Faker::Internet.email, :password => "pass#{time}", :password_confirmation => "pass#{time}",
+              :profile_attributes => {
+                :name => Faker::Company.name,
+                :description => Faker::Lorem.paragraph,
+                :contact => Faker::Name.name,
+                :email => Faker::Internet.email,
+                :industry => Faker::Lorem.words(1)[0],
+                :services => Faker::Lorem.sentence,
+                :street => Faker::Address.street_address,
+                :city => Faker::Address.city,
+                :state => Faker::Address.us_state,
+                :zipcode => Faker::Address.zip_code,
+                :county => County.all.rand,
+                :website => "http://" + Faker::Internet.domain_name                
+              })
+end

@@ -1,2 +1,3 @@
-<h1>NewsItems#show</h1>
-<p>Find me in app/views/news_items/show.html.erb</p>
+<h1>News from <%= @item.date %></h1>
+<h2><%= @item.title.titleize %></h2>
+<p><%= @item.content %></p>
