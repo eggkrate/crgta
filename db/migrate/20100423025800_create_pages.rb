@@ -3,7 +3,6 @@ class CreatePages < ActiveRecord::Migration
     create_table :pages do |t|
       t.string :title, :null => false
       t.text :content,  :null => false
-      t.string :slug, :null => false
       t.integer :category_id
 
       t.timestamps

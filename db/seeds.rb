@@ -16,14 +16,16 @@ County.create(:name => "hood river".titleize)
   Category.create(:name => "#{c}".titleize)
 end
 
-
-Page.create(:title => "Welcome!", :content => "Index page", :slug => "index")
+Page.create(:title => "Home Page", :content => "This is the index page")
 
 %w(contact_us mission_and_vision).each do |c|
-  Page.create(:title => "#{c}".titleize, :content => Faker::Lorem.paragraphs(rand(10) + 2).join(' '), :category_id => 1, :slug => c)
+  Page.create(:title => "#{c}".titleize, :content => Faker::Lorem.paragraphs(rand(10) + 2).join(' '), :category_id => 1)
 end
 
-%w(latest_news news).each do |c|
-  Page.create(:title => "#{c}".titleize, :content => Faker::Lorem.sentences().join(' '), :category_id => 2, :slug => c)
+%w(benefits_and_services become_a_member).each do |c|
+  Page.create(:title => "#{c}".titleize, :content => Faker::Lorem.paragraphs(rand(10) + 2).join(' '), :category_id => 3)
 end
 
+5.times do |time|
+  NewsItem.create(:title => Faker::Lorem.sentence, :content => Faker::Lorem.paragraphs.join(' '), :date => time.days.ago)
+end
