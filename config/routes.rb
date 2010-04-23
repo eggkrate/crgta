@@ -10,9 +10,11 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'pages', :action => 'index'
 
   map.page ':category/:slug', :controller => 'pages', :action => 'show'
+  map.news_item '/:slug', :controller => 'news_items', :action => 'show'
 
   map.namespace :admin do |admin|
     admin.resources :pages
+    admin.resources :news_items
   end
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -20,9 +20,10 @@ end
 Page.create(:title => "Welcome!", :content => "Index page", :slug => "index")
 
 %w(contact_us mission_and_vision).each do |c|
-  Page.create(:title => "#{c}".titleize, :content => Faker::Lorem.sentences(20).join(' '), :category_id => 1, :slug => c)
+  Page.create(:title => "#{c}".titleize, :content => Faker::Lorem.paragraphs(rand(10) + 2).join(' '), :category_id => 1, :slug => c)
 end
 
 %w(latest_news news).each do |c|
-  Page.create(:title => "#{c}".titleize, :content => Faker::Lorem.sentences(20).join(' '), :category_id => 2, :slug => c)
+  Page.create(:title => "#{c}".titleize, :content => Faker::Lorem.sentences().join(' '), :category_id => 2, :slug => c)
 end
+
