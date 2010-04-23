@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
 
   def index
-    @page = Page.find_by_title("Home Page")
+    @index = Page.find_by_title("Home Page")
+    @pages = Page.all
   end
 
   def show

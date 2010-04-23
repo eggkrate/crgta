@@ -1,3 +1,13 @@
-Admin:
-<h1><%= @page.title.titleize %></h1>
-<p><%= @page.content %></p>
+<h1><%= @index.title.titleize %></h1>
+<p><%= @index.content %></p>
+
+<ul>
+<% @pages.each do |page| %>
+	<li>
+		<% if page.category %>
+			<%= link_to page.title.titleize, page_path(page.category, page)  %>
+		<% else %>
+			<%= link_to page.title.titleize, page %>
+		<% end %>
+	</li>
+<% end %>
