@@ -1,4 +1,5 @@
 class Admin::PagesController < ApplicationController
+  #before_filter :login_required
   uses_tiny_mce
   
   def index
@@ -17,15 +18,23 @@ class Admin::PagesController < ApplicationController
     @page = Page.new(params[:page])
     if @page.save
       flash[:notice] = "Page #{@page.title.titleize} created"
-      redirect_to root_url
+      redirect_to @page
     end
   end
 
+  # GET /pages/1/edit
+  def edit
+    @page = Page.find(params[:id])
+  end
+
   def update
-    @page = Page.create(params[:page])
-    if @page.save
+    @page = Page.find(params[:id])
+    if @page.update_attributes(params[:page])
       flash[:notice] = "Page #{@page.title.titleize} created"
-      redirect_to :back
+      redirect_to @page
+    else
+      flash[:notice] = "Can't create page"
+      redirect_to @page
     end
   end
 

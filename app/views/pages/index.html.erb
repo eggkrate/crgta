@@ -10,6 +10,7 @@
 		<% else %>
 			<%= link_to page.title.titleize, page %>
 		<% end %>
+		<%= "Category: " + page.category.name.titleize if page.category %> <%= link_to "edit", edit_admin_page_path(page) %>
 	</li>
 <% end %>
 </ul>
@@ -19,6 +20,7 @@
 	<% @news.each do |item| %>
 		<li>
 			<%= link_to item.title.titleize, item %>
+			<%= link_to "edit", edit_admin_news_item_path(item) %>
 		</li>
 	<% end %>
 </ul>

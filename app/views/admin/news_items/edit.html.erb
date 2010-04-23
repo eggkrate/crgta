@@ -1,0 +1,24 @@
+<h1>Editing <%= @item.title.titleize %></h1>
+
+<% form_for(:admin, @item) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content, :class => 'mceEditor'%>
+  </p>
+	<p>
+		<%= f.label :date %><br />
+		<%= select_date @item.date %>
+	</p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @page %> |
+<%= link_to 'Back', admin_pages_path %>
