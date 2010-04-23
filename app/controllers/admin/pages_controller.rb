@@ -1,4 +1,6 @@
 class Admin::PagesController < ApplicationController
+  uses_tiny_mce
+  
   def index
     @pages = Page.all
   end
@@ -12,10 +14,10 @@ class Admin::PagesController < ApplicationController
   end
   
   def create
-    @page = Page.create(params[:page])
+    @page = Page.new(params[:page])
     if @page.save
       flash[:notice] = "Page #{@page.title.titleize} created"
-      redirect_to :back
+      redirect_to root_url
     end
   end
 

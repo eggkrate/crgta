@@ -1,2 +1,10 @@
 <h1>Admin::Pages#update</h1>
 <p>Find me in app/views/admin/pages/update.html.erb</p>
+<% form_for :page, @page do |f| %>
+<%= f.error_messages %>
+
+	<%= f.text_field :title %>
+	<%= f.text_field :category %>
+	<%= f.text_area :content, :class => 'mceEditor' %>
+	<%= submit_tag 'Create' %>
+<% end %>
