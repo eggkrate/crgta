@@ -1,0 +1,7 @@
+<h1><%= @user.get_name.titleize %></h1>
+
+<p><%= @user.profile.description %></p>
+
+<p>Website: <%= link_to @user.profile.website, @user.profile.website %></p>
+<p><%= @user.profile.street %><br/>
+	<%= @user.profile.city.titleize %>, <%= @user.profile.state.titleize %>  <%= @user.profile.zipcode %> 
