@@ -7,7 +7,13 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :user_sessions
   map.resources :pages
   map.resources :users
+  map.root :controller => 'pages', :action => 'index'
 
+  map.page ':category/:slug', :controller => 'pages', :action => 'show'
+
+  map.namespace :admin do |admin|
+    admin.resources :pages
+  end
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

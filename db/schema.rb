@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(:version => 20100423025800) do
   end
 
   create_table "pages", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
+    t.string   "title",       :null => false
+    t.text     "content",     :null => false
+    t.string   "slug",        :null => false
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
