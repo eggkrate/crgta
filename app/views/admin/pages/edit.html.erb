@@ -1,6 +1,6 @@
 <h1>Editing <%= @page.title.titleize %></h1>
 
-<% form_for :page, @page, :url => {:action => "update"} do |f| %>
+<% form_for [:admin, @page] do |f| %>
   <%= f.error_messages %>
 
   <p>

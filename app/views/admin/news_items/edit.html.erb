@@ -1,6 +1,6 @@
 <h1>Editing <%= @item.title.titleize %></h1>
 
-<% form_for(:admin, @item) do |f| %>
+<% form_for [:admin,@item] do |f| %>
   <%= f.error_messages %>
 
   <p>

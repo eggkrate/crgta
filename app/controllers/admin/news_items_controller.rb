@@ -19,7 +19,7 @@ class Admin::NewsItemsController < Admin::ApplicationController
   end
 
   def create
-    @item = NewsItem.new(params[:item])
+    @item = NewsItem.new(params[:news_item])
     if @item.save
       flash[:notice] = "News Item #{@item.title.titleize} created"
       redirect_to @item
@@ -28,8 +28,8 @@ class Admin::NewsItemsController < Admin::ApplicationController
 
   def update
     @item = NewsItem.find(params[:id])
-    if @item.update_attributes(params[:item])
-      flash[:notice] = "News Item #{@item.title.titleize} created"
+    if @item.update_attributes(params[:news_item])
+      flash[:notice] = "News Item Updated"
       redirect_to @item
     else
       flash[:notice] = "Can't create item"

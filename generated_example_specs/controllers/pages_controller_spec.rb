@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe NewsItemsController do
+describe Admin::PagesController do
 
   #Delete these examples and add some real ones
-  it "should use NewsItemsController" do
-    controller.should be_an_instance_of(NewsItemsController)
+  it "should use Admin::PagesController" do
+    controller.should be_an_instance_of(Admin::PagesController)
   end
 
 
@@ -21,4 +21,5 @@ describe NewsItemsController do
       response.should be_success
     end
   end
+  
 end

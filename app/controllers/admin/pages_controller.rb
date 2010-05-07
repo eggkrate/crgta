@@ -30,10 +30,10 @@ class Admin::PagesController < ApplicationController
   def update
     @page = Page.find(params[:id])
     if @page.update_attributes(params[:page])
-      flash[:notice] = "Page #{@page.title.titleize} created"
+      flash[:notice] = "Page updated!"
       redirect_to @page
     else
-      flash[:notice] = "Can't create page"
+      flash[:notice] = "Can't update page"
       redirect_to @page
     end
   end

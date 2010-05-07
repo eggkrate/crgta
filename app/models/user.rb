@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   
   accepts_nested_attributes_for :profile
   
-  has_friendly_id :get_name, :use_slug => true, :approximate_ascii => true
+#  has_friendly_id :get_name, :use_slug => true, :approximate_ascii => true
   
   def get_name
     profile.name ? profile.name : profile.contact

@@ -5,11 +5,7 @@
 <ul>
 <% @pages.each do |page| %>
 	<li>
-		<% if page.category %>
-			<%= link_to page.title.titleize, page_path(page.category, page)  %>
-		<% else %>
-			<%= link_to page.title.titleize, page %>
-		<% end %>
+		<%= link_to page.title.titleize, page %>
 		<%= "Category: " + page.category.name.titleize if page.category %> <%= link_to "edit", edit_admin_page_path(page) %>
 	</li>
 <% end %>
