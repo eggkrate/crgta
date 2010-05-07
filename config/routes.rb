@@ -10,7 +10,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :news_items
 
-  map.resources :pages #':category/:id', :controller => 'pages', :action => 'show'
+#  map.category_page ':category/:id', :controller => 'pages', :action => 'show'
+  map.resources :pages 
 
   map.namespace :admin do |admin|
     admin.resources :pages

@@ -12,8 +12,15 @@ describe Admin::NewsItemsController, :type => :controller do
     controller.should be_an_instance_of(Admin::NewsItemsController)
   end
 
-  it "should display the index"
-  it "should show a news item"
+  it "should display the index" do
+    get 'index'
+    response.should be_success
+  end
+      
+  it "should show a news item" do
+    get 'show', :id => @news_item.id
+    response.should be_success
+  end
 
   it "should show the edit page" do
     get :edit, :id => @news_item.id 
