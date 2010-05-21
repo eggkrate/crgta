@@ -23,6 +23,7 @@ describe Admin::NewsItemsController, :type => :controller do
       get 'show', :id => @news_item.id
       response.should be_success
     end
+    
 
     it "should show the edit page" do
       get :edit, :id => @news_item.id 
