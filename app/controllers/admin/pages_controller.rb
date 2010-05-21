@@ -1,5 +1,5 @@
 class Admin::PagesController < ApplicationController
-  #before_filter :login_required
+  before_filter :login_required
   uses_tiny_mce
   
   def index

@@ -8,12 +8,13 @@ describe Admin::PagesController do
   end
 
 
-  describe "GET 'index'" do
+  
     it "should be successful" do
+      u = User.create(:email => "a@b.com", :password => "blahblah", :password_confirmation => "blahblah")
+      UserSession.create(users(u))
       get 'index'
       response.should be_success
     end
-  end
 
   describe "GET 'show'" do
     it "should be successful" do

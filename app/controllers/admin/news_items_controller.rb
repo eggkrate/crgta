@@ -1,4 +1,5 @@
 class Admin::NewsItemsController < Admin::ApplicationController
+  before_filter :login_required
   uses_tiny_mce
   
   def index
