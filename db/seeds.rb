@@ -46,4 +46,4 @@ end
                 :county => County.all.rand,
                 :website => "http://" + Faker::Internet.domain_name                
               })
-end
+ end
